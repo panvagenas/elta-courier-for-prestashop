@@ -120,9 +120,11 @@ class Module extends \XDaRk\CarrierModule{
 
 	public function calculatePrice($weight){
 		if($weight < 3)
-			return 2.0;
+			$price = 2.5;
+		else
+			$price = (ceil($weight) - 3) * 1 + 2.5;
 
-		return (ceil($weight) - 3) * 0.7 + 2.0;
+		return $price;
 	}
 }
 
