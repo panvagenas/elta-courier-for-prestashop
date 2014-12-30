@@ -106,7 +106,7 @@ class Module extends \XDaRk\CarrierModule{
 		$addressObj = new \Address( $cart->id_address_delivery );
 
 		$country = mb_strtolower($addressObj->country);
-		$countryChecks = ['greece', 'ελλάδα', 'ελλαδα', 'ελλας', 'ελλάς', 'el', 'el_gr', 'ellada', 'ellas', 'hellas', 'gr'];
+		$countryChecks = array('greece', 'ελλάδα', 'ελλαδα', 'ελλας', 'ελλάς', 'el', 'el_gr', 'ellada', 'ellas', 'hellas', 'gr');
 		if(!in_array($country, $countryChecks)){
 			return false;
 		}
