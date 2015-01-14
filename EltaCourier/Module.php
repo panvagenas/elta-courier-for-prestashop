@@ -93,6 +93,10 @@ class Module extends \XDaRk\CarrierModule{
 		return $this->getOrderShippingCostExternal( $params );
 	}
 
+	public function getContext(){
+		return $this->context;
+	}
+
 	/**
 	 * @param \Cart $cart
 	 *
