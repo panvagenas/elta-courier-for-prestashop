@@ -39,11 +39,11 @@ class Hooks extends \XDaRk\Hooks{
 		}
 
 		$carrier = new \Carrier($order->id_carrier);
-
+		// FIXME Tranlations not working, maybe a core problem
 		if(\Configuration::get('ELTA_CLDE') == $order->id_carrier && $carrier){
 			$out = array(
-				$this->moduleInstance->l('Shipping Method: ') => $carrier->name,
-				$this->moduleInstance->l('Service: ') => $this->moduleInstance->l('door-to-door')
+				$this->moduleInstance->l('Μέθοδος Αποστολής: ', __CLASS__) => $carrier->name,
+				$this->moduleInstance->l('Υπηρεσία: ') => $this->moduleInstance->l('πόρτα-πόρτα')
 			);
 		} else {
 			return '';
