@@ -43,7 +43,7 @@ class Hooks extends \XDaRk\Hooks{
 		if(\Configuration::get('ELTA_CLDE') == $order->id_carrier && $carrier){
 			$out = array(
 				$this->moduleInstance->l('Μέθοδος Αποστολής: ', __CLASS__) => $carrier->name,
-				$this->moduleInstance->l('Υπηρεσία: ') => $this->moduleInstance->l('πόρτα-πόρτα')
+				$this->moduleInstance->l('Υπηρεσία: ') => $this->moduleInstance->l('Παράδοση στη διεύθυνση αποστολής')
 			);
 		} else {
 			return '';
