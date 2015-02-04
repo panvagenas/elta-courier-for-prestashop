@@ -130,6 +130,20 @@ class Module extends \XDaRk\CarrierModule{
 
 		return $price;
 	}
+
+	public function getOrderCarrierExtendedInfo(\Cart $cart){
+		$carrier = new \Carrier($cart->id_carrier);
+		$out = array();
+		// FIXME Tranlations not working, maybe a core problem
+		if(\Configuration::get('ELTA_CLDE') == $cart->id_carrier && $carrier){
+			$out = array(
+				$this->moduleInstance->l('Μέθοδος Αποστολής: ', __CLASS__) => $carrier->name,
+				$this->moduleInstance->l('Υπηρεσία: ') => $this->moduleInstance->l('Παράδοση στη διεύθυνση αποστολής')
+			);
+		}
+
+		return $out;
+	}
 }
 
 $GLOBALS['eltacourier'] = array(
